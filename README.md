@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 
 * Choose an email notification sound and download it to the current folder
-For inspiration, we recommend [http://www.sounds4email.com/sounds/popular.php]()
+For inspiration, we recommend [http://www.sounds4email.com/sounds/popular.php](http://www.sounds4email.com/sounds/popular.php)
 
 * Create a credentials file
 ```bash
