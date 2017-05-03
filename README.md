@@ -6,9 +6,9 @@ notifications library for python.
 ## Install
 * Download or clone this repo
 
-* (Optional) Create a new virtualenv and activate it
+* (Optional) Create a new virtualenv with python3 and activate it
 ```bash
-virtualenv -p python3.5 venv 
+virtualenv -p python3 venv 
 source venv/bin/activate
 ```
 
