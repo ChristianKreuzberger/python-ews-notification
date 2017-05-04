@@ -17,9 +17,7 @@ exchange_server = os.environ.get("EXCHANGE_SERVER")
 
 if soundfile != "":
     # load a sound file
-    pygame.mixer.init()
-    print("Loading soundfile", soundfile)
-    pygame.mixer.music.load(soundfile)  # can be any other format
+    pygame.mixer.pre_init()
 else:
     print("Skipping loading of soundfile")
 
@@ -56,9 +54,15 @@ try:
 
             # play a sound
             if soundfile != "":
+                pygame.mixer.init()
+                pygame.mixer.music.load(soundfile)  # can be any other format
                 pygame.mixer.music.play()
             # show notification
             notification.notify(title="{n} new emails".format(n=diff), message=bodytext)
+        else:
+            if not pygame.mixer.get_busy():
+                # after playback, pause the mixer
+                pygame.mixer.quit()
 
         last_number_of_emails = cur_number_of_emails
         time.sleep(5)
